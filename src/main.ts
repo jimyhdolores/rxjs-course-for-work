@@ -1,3 +1,4 @@
+import { subscriptionMultipleOperators } from './operators/multiple-operator/multiple-operator';
 import './style.css';
 import typescriptLogo from './typescript.svg';
 import viteLogo from '/vite.svg';
@@ -43,4 +44,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
 //#region OPERADORES DE ERRORR
 // subscriptionOperatorCatchError();
+//#endregion
+
+//#region MULTIPLE OBSERVABLE
+subscriptionMultipleOperators();
 //#endregion

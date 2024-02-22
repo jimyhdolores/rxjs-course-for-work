@@ -10,7 +10,6 @@ export const subscriptionOperatorCatchError = () => {
 		.pipe(
 			catchError((error) => {
 				console.error('Error controlado desde el Operador');
-				// return of(error);
 				return of({ code: 'ERR001', msg: 'Error controlado' });
 			})
 		)

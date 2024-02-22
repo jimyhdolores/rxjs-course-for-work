@@ -15,11 +15,15 @@ const observable = new Observable<number>((observer) => {
 });
 
 export const subscriptionOperatorTakeUntil = () => {
-	observable.pipe(takeUntil(unsubscribe$)).subscribe((valor) => console.log(valor));
-	observable.pipe(takeUntil(unsubscribe$)).subscribe((valor) => console.log(valor));
-	observable.pipe(takeUntil(unsubscribe$)).subscribe((valor) => console.log(valor));
+	const obs1 = observable.pipe(takeUntil(unsubscribe$)).subscribe((value) => console.log(value));
+	const obs2 = observable.pipe(takeUntil(unsubscribe$)).subscribe((value) => console.log(value));
+	const obs3 = observable.pipe(takeUntil(unsubscribe$)).subscribe((value) => console.log(value));
 
 	setTimeout(() => {
+		// obs1.unsubscribe();
+		// obs2.unsubscribe();
+		// obs3.unsubscribe();
+
 		console.log('CANCELANDO TODOS LAS SUSCRIPCIONES');
 		unsubscribe$.next();
 		unsubscribe$.unsubscribe();
